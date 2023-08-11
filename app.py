@@ -1,12 +1,13 @@
 import pandas as pd
 import numpy as np
-import pickle
+import joblib
 import streamlit as st
 #from PIL import Image
 
 # loading in the model to predict on the data
-pickle_in = open('classifier.pkl', 'rb')
-classifier = pickle.load(pickle_in)
+classifier = joblib.load("iris-classifier.joblib")
+#pickle_in = open('classifier.pkl', 'rb')
+#classifier = pickle.load(pickle_in)
 
 def welcome():
 	return 'welcome all'
