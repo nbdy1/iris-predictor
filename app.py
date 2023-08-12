@@ -15,16 +15,17 @@ def prediction(sepal_length, sepal_width, petal_length, petal_width):
 # this is the main function in which we define our webpage
 # giving the webpage a title
 st.title("Iris Flower Prediction")
-st.header('IRIS MODEL DEPLOYMENT')
-from PIL import Image
-sepal_length = st.sidebar.slider('SEPAL LENGTH', 0.0, 9.0, (5.0))
-sepal_width = st.sidebar.slider('SEPAL WIDTH', 0.0, 4.5, (2.5))
-petal_length = st.sidebar.slider('PETAL LENGTH', 0.0, 8.0, (4.5))
-petal_width = st.sidebar.slider('PETAL WIDTH', 0.0, 3.0, (1.5))
+st.sidebar.subheader(f"Hey {user_name}")
+sepal_length = st.sidebar.slider('Sepal length', 0.0, 9.0, (5.0))
+sepal_width = st.sidebar.slider('Sepal width', 0.0, 4.5, (2.5))
+petal_length = st.sidebar.slider('Petal length', 0.0, 8.0, (4.5))
+petal_width = st.sidebar.slider('Petal width', 0.0, 3.0, (1.5))
 	
 # the below line ensures that when the button called 'Predict' is clicked,
 # the prediction function defined above is called to make the prediction
 # and store it in the variable result
+from PIL import Image
+
 if st.button("Predict"):
 	pred = prediction(sepal_length, sepal_width, petal_length, petal_width)
 	if pred == 0:
