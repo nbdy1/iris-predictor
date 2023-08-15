@@ -1,8 +1,12 @@
 import joblib
 import streamlit as st
 
+@st.cache_resource  # 👈 Add the caching decorator
+def load_model():
+    return joblib.load("iris-classifier.joblib")
+
 # loading in the model to predict on the data
-classifier = joblib.load("iris-classifier.joblib")
+classifier = load_model()
 
 # defining the function which will make the prediction using the data which the user inputs
 def prediction(sepal_length, sepal_width, petal_length, petal_width):
