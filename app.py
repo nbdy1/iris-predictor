@@ -14,7 +14,7 @@ def prediction(sepal_length, sepal_width, petal_length, petal_width):
 	return prediction
 
 # this is where we define our webpage:
-st.header("Iris Flower Prediction")
+st.header("Iris Flower Prediction by Ryan")
 st.sidebar.subheader("Input features")
 sepal_length = st.sidebar.slider('Sepal length', 0.0, 9.0, (5.0))
 sepal_width = st.sidebar.slider('Sepal width', 0.0, 4.5, (2.5))
